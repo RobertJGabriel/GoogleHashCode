@@ -39,3 +39,5 @@ local.properties
 
 # Locally stored "Eclipse launch configurations"
 *.launch
+
+assets/.DS_Store
