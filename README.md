@@ -1,4 +1,6 @@
 
+![alt text](https://github.com/RobertJGabriel/GoogleHashCode/blob/master/assets/images/readme.png?raw=true "Google Hashcode")
+
 ##About 
 Hash Code is a team-based programming competition organized by Google. You pick your team and programming language, we pick a real-life engineering problem to solve. Are you up for the challenge?
 
