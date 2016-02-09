@@ -16,3 +16,7 @@ For over ten years, Google has been building data centers of its own design, dep
 ### [Street View Routing](https://hashcode.withgoogle.com/2014/tasks/hashcode2014_final_task.pdf)
 #####Hash Code 2014, Final Round 
 The Street View imagery available in Google Maps is captured using specialized vehicles called Street View cars. These cars carry multiple cameras capturing pictures as the car moves around a city. Capturing the imagery of a city poses an optimization problem: the fleet of cars is available for a limited amount of time and we want to cover as much of the city streets as possible.
+
+##2016 Projects
+#####Repo
+[jcmmagnusson](https://github.com/jcmmagnusson/GoogleHashCode2016/tree/master/PaintingTestProblem/src)
