@@ -4,6 +4,15 @@
 Hash Code is a team-based programming competition organized by Google. You pick your team and programming language, we pick a real-life engineering problem to solve. Are you up for the challenge?
 
 
+##2016 Projects
+#####Painting the Facade
+The day has come to paint a huge mural on the facade of the Google Paris​office.
+A picture has been decided on and a specialized machine has been hired to perform the painting.
+Unfortunately, it turns out that the painting operations supported by the machine are quite low-level.
+Therefore before putting the machine to work, the target picture has to be translated into a list of
+instructions supported by the machine.
+[Projects](https://github.com/jcmmagnusson/GoogleHashCode2016/tree/master/PaintingTestProblem/src)
+
 ##Past problem statements
 ### [Route Loon Balloons](https://hashcode.withgoogle.com/2015/tasks/hashcode2015_final_task.pdf)
 #####Hash Code 2015, Final Round 
@@ -17,6 +26,4 @@ For over ten years, Google has been building data centers of its own design, dep
 #####Hash Code 2014, Final Round 
 The Street View imagery available in Google Maps is captured using specialized vehicles called Street View cars. These cars carry multiple cameras capturing pictures as the car moves around a city. Capturing the imagery of a city poses an optimization problem: the fleet of cars is available for a limited amount of time and we want to cover as much of the city streets as possible.
 
-##2016 Projects
-#####Repo
-[jcmmagnusson](https://github.com/jcmmagnusson/GoogleHashCode2016/tree/master/PaintingTestProblem/src)
+
