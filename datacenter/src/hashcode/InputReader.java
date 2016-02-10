@@ -16,10 +16,8 @@ public class InputReader {
 
 	private static final String SEPARATOR = " ";
 
-	public ProblemSolver readFromFile(String filename, IdGenerator idGenerator)
-			throws IOException {
-		final BufferedReader reader = new BufferedReader(new FileReader(
-				filename));
+	public ProblemSolver readFromFile(String filename, IdGenerator idGenerator) throws IOException {
+		final BufferedReader reader = new BufferedReader(new FileReader(filename));
 		String currentLine = null;
 		currentLine = reader.readLine();
 		StringTokenizer tokenizer = new StringTokenizer(currentLine, " ");
@@ -30,8 +28,7 @@ public class InputReader {
 		for (int i = 0; i < rows.length; i++) {
 			rows[i] = new Row(nbSlotsPerRow);
 		}
-		final int nbUnavailableSlots = Integer.parseInt(tokenizer
-				.nextToken());
+		final int nbUnavailableSlots = Integer.parseInt(tokenizer.nextToken());
 		final int nbGroups = Integer.parseInt(tokenizer.nextToken());
 		final int nbServers = Integer.parseInt(tokenizer.nextToken());
 		// unavailable locations
@@ -50,12 +47,12 @@ public class InputReader {
 			tokenizer = new StringTokenizer(currentLine, SEPARATOR);
 			final int size = Integer.parseInt(tokenizer.nextToken());
 			final int capacity = Integer.parseInt(tokenizer.nextToken());
-			final Server server = new Server(idGenerator.getNextId(), size,
-					capacity);
+			final Server server = new Server(idGenerator.getNextId(), size, capacity);
 			servers.add(server);
 		}
+
 		final Pool[] pools = new Pool[nbGroups];
-		for (int i = 0 ; i < pools.length ; i++) {
+		for (int i = 0; i < pools.length; i++) {
 			pools[i] = new Pool();
 		}
 		final DataCenter dataCenter = new DataCenter(rows, pools);

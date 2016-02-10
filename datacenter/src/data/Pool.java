@@ -9,20 +9,17 @@ import java.util.Set;
  * @author leo
  *
  */
-public class Pool implements Comparable
-{
+public class Pool implements Comparable {
 	/**
 	 * The servers of the pool
 	 */
 	protected Set<Server> servers;
 
-	public Pool()
-	{
+	public Pool() {
 		this.servers = new HashSet<Server>();
 	}
 
-	public Set<Server> getServers()
-	{
+	public Set<Server> getServers() {
 		return this.servers;
 	}
 
@@ -31,8 +28,7 @@ public class Pool implements Comparable
 	 * 
 	 * @param server
 	 */
-	public void addServer(Server server)
-	{
+	public void addServer(Server server) {
 		this.servers.add(server);
 	}
 
@@ -41,36 +37,30 @@ public class Pool implements Comparable
 	 * 
 	 * @param server
 	 */
-	public void removeServer(Server server)
-	{
+	public void removeServer(Server server) {
 		this.servers.remove(server);
 	}
 
-	public int totalCapacity()
-	{
+	public int totalCapacity() {
 		int res = 0;
-		for (Server s : this.getServers())
-		{
+		for (Server s : this.getServers()) {
 			res += s.getCapacity();
 		}
 		return res;
 	}
-	
+
 	public Server getFirstServer() {
 		return servers.iterator().next();
 	}
-	
 
-	public String toString()
-	{
+	public String toString() {
 		String str = "Pool:\n" + this.getServers();
 		str += "\nCapacity = " + this.totalCapacity();
 		return str;
 	}
 
 	@Override
-	public int compareTo(Object arg0)
-	{
+	public int compareTo(Object arg0) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

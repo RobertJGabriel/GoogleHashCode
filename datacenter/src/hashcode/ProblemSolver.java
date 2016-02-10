@@ -18,8 +18,7 @@ import data.utils.Bloc;
  * @author leo
  *
  */
-public class ProblemSolver
-{
+public class ProblemSolver {
 	/**
 	 * The data center
 	 */
@@ -40,51 +39,42 @@ public class ProblemSolver
 	 */
 	protected Set<Server> servers;
 
-	public ProblemSolver(DataCenter datacenter, Set<Server> servers)
-	{
+	public ProblemSolver(DataCenter datacenter, Set<Server> servers) {
 		this.setDatacenter(datacenter);
 		this.setRows(datacenter.getRows());
 		this.setPools(datacenter.getPools());
 		this.setServers(servers);
 	}
 
-	public DataCenter getDatacenter()
-	{
+	public DataCenter getDatacenter() {
 		return this.datacenter;
 	}
 
-	public void setDatacenter(DataCenter datacenter)
-	{
+	public void setDatacenter(DataCenter datacenter) {
 		this.datacenter = datacenter;
 	}
 
-	public Row[] getRows()
-	{
+	public Row[] getRows() {
 		return this.rows;
 	}
 
-	public void setRows(Row[] rows)
-	{
+	public void setRows(Row[] rows) {
 		this.rows = rows;
 	}
 
-	public Pool[] getPools()
-	{
+	public Pool[] getPools() {
 		return this.pools;
 	}
 
-	public void setPools(Pool[] pools)
-	{
+	public void setPools(Pool[] pools) {
 		this.pools = pools;
 	}
 
-	public Set<Server> getServers()
-	{
+	public Set<Server> getServers() {
 		return this.servers;
 	}
 
-	public void setServers(Set<Server> servers)
-	{
+	public void setServers(Set<Server> servers) {
 		this.servers = servers;
 	}
 
@@ -94,8 +84,7 @@ public class ProblemSolver
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unchecked")
-	public void initPools() throws Exception
-	{
+	public void initPools() throws Exception {
 		List<Server> s = new ArrayList<Server>();
 		s.addAll(this.getServers());
 		Collections.sort(s);
@@ -103,12 +92,11 @@ public class ProblemSolver
 		Pool[] p = this.getPools();
 		int i = 0;
 		boolean direction = true;
-		for (Server ser : s)
-		{
+		for (Server ser : s) {
 			p[i].addServer(ser);
-			if (direction && i < p.length-1)
+			if (direction && i < p.length - 1)
 				i++;
-			else if (direction && i >= p.length-1)
+			else if (direction && i >= p.length - 1)
 				direction = false;
 			else if (!direction && i >= 1)
 				i--;
@@ -120,8 +108,7 @@ public class ProblemSolver
 
 		int max = p[0].totalCapacity();
 		int min = p[0].totalCapacity();
-		for (int j = 0; j < p.length; j++)
-		{
+		for (int j = 0; j < p.length; j++) {
 			System.out.println(p[j]);
 			if (p[i].totalCapacity() > max)
 				max = p[i].totalCapacity();
@@ -132,7 +119,7 @@ public class ProblemSolver
 		System.out.println("Min: " + min);
 		System.out.println("Max = " + max);
 	}
-	
+
 	public void range(Server server, Pool currentPool) {
 		boolean isRange = false;
 		int i = 0;
@@ -145,7 +132,7 @@ public class ProblemSolver
 		}
 		currentPool.removeServer(server);
 	}
-	
+
 	public static void main(String[] args) throws IOException {
 		final InputReader reader = new InputReader();
 		final ProblemSolver solver = reader.readFromFile("input.txt", new IdGenerator());

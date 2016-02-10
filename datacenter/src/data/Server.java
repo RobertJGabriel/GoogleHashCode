@@ -7,8 +7,7 @@ package data;
  * @author leo
  *
  */
-public class Server implements Comparable<Server>
-{
+public class Server implements Comparable<Server> {
 	/**
 	 * The id of the server
 	 */
@@ -72,8 +71,7 @@ public class Server implements Comparable<Server>
 	}
 
 	@Override
-	public int compareTo(Server o)
-	{
+	public int compareTo(Server o) {
 		Server object = (Server) o;
 		return object.getCapacity() - this.getCapacity();
 	}
