@@ -54,7 +54,6 @@ public class Order implements Comparator<Order> {
     	Map m = Map.getInstance();
     	
     }
-    
     public int movesToClosestWareHouse(){
     	int currentLeast = 10000000;
     	
@@ -64,7 +63,6 @@ public class Order implements Comparator<Order> {
     			currentLeast = noMoves;
     		}
     	}
-    	
     	return currentLeast;
     	
     }

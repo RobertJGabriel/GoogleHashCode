@@ -6,12 +6,15 @@ public class Warehouse {
     
     int row;
     int col;
-    ArrayList<Product> productList;
+    ArrayList<Integer> productList;
     
-    public Warehouse(int row, int col){
+    public Warehouse(int row, int col, ArrayList<String> pl){
         this.row = row;
         this.col = col;
         productList = new ArrayList<>();
+        for(String item: pl){
+            productList.add(Integer.parseInt(item));
+        }
     }
     
     public int getQuickestRouteToHere(int[] dest){
@@ -25,9 +28,7 @@ public class Warehouse {
         return (int) Math.abs(Math.round(result));
     }
     
-    public boolean checkProductIsStocked(Product product){
-       return productList.contains(product);
-    }
+
     
     public boolean areAllProductsInThisWarehouse(ArrayList<OrderItem> list){
     	int plistsize = productList.size();

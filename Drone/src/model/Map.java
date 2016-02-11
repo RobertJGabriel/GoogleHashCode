@@ -5,6 +5,7 @@ public class Map {
 	
 	private Map(){
 		warehouseList = new ArrayList<>();
+                productList = new ArrayList<>();
 	};
 	
 	private static Map instance = null;
@@ -14,12 +15,8 @@ public class Map {
     int[] maxCordinates;
     
     ArrayList<Warehouse> warehouseList;
-    
-    public Map(int[] minCord, int[] maxCord){
-        this.minCordinates = minCord;
-        this.maxCordinates = maxCord;
-    }
-
+    ArrayList<Integer> productList;
+   
 	public int[] getMinCordinates() {
 		return minCordinates;
 	}
@@ -50,7 +47,17 @@ public class Map {
 		return warehouseList;
 	}
 
-	public void setWarehouseList(ArrayList<Warehouse> warehouseList) {
-		this.warehouseList = warehouseList;
-	}
+    public void setWarehouseList(ArrayList<Warehouse> warehouseList) {
+            this.warehouseList = warehouseList;
+    }
+
+    public ArrayList<Integer> getProductList() {
+        return productList;
+    }
+
+
+    public void addProduct(int p){
+        productList.add(p);
+    }
+    
 }
