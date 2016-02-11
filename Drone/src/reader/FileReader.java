@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import model.Map;
+import model.Warehouse;
 
 public class FileReader {
 
@@ -78,9 +79,12 @@ public class FileReader {
 				current_line = bufferedReader.readLine();
 			
 				// Number of items now
-				ArrayList<String> weights = new ArrayList<String>(Arrays.asList(current_line.split("\\s+")));
-
-				//gameboard.
+				ArrayList<String> numberOfItems = new ArrayList<String>(Arrays.asList(current_line.split("\\s+")));
+			
+				//Map.getInstance().getWarehouseList().add(new Warehouse(row,column, numberOfItems));
+				
+				
+				
 			}
 
 		}
