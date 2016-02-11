@@ -1,37 +1,45 @@
 package reader;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 
 public class FileReader {
 
-    public FileReader() {
-    }
+	private final String inputFile;
 
-    public Result readFile(String path) throws IllegalFileException{
-        int row = 0;
-        int colum = 0;
-        String textResult = null;
-        int cont = 0;
+	private int row;
 
-        try {
-            Scanner sc = new Scanner(path);
-            while (sc.hasNext()){
-                if (cont == 0) {
-                    row = sc.nextInt();
-                    colum = sc.nextInt();
-                    sc.nextLine();
-                }else{
-                    textResult += sc.nextLine()+"\n\r";
-                }
-                cont++;
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-            throw new IllegalFileException();
-        }
+	private int columns;
 
+	public FileReader(String inputFile) {
 
-		return new Result(textResult, row, colum);
-    }
+		this.inputFile = inputFile;
 
+	}
+
+	public void parseFile() throws IOException {
+		Path path = Paths.get(inputFile);
+
+		try (BufferedReader bufferedReader = Files.newBufferedReader(path)) {
+
+			String current_line = bufferedReader.readLine();
+			
+			String[] splited_string = current_line.split(" ");
+
+			row = Integer.parseInt(splited_string[0]);
+			columns = Integer.parseInt(splited_string[1]);
+			
+			
+			System.out.println(Integer.parseInt(splited_string[1]));
+			for (int i = 0; i < row; i++) {
+				current_line = bufferedReader.readLine();
+				current_line.chars().mapToObj(c -> (char) c).toArray(Character[]::new);
+			}
+		}
+	}
 }
