@@ -1,8 +1,7 @@
-
+package model;
 import java.util.ArrayList;
 import model.Product;
 
-//Alan smith
 public class Warehouse {
     
     int row;
@@ -23,11 +22,25 @@ public class Warehouse {
         int tempe = tempc + tempd;
         double result = Math.sqrt(tempe);
         
-        return (int) Math.round(result);
+        return (int) Math.abs(Math.round(result));
     }
     
     public boolean checkProductIsStocked(Product product){
        return productList.contains(product);
     }
     
+    public boolean areAllProductsInThisWarehouse(ArrayList<OrderItem> list){
+    	int plistsize = productList.size();
+    	for(OrderItem item: list){
+    		for(int i = 0; i < plistsize; i++){
+    			if(item.productType == productList.get(i).getType()){
+    				break;
+    			}
+    			if(i == (plistsize -1)){
+    				return false;
+    			}
+    		}
+    	}
+    	return true;
+    }
 }

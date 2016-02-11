@@ -1,4 +1,3 @@
-//Alan Smith
 package model;
 
 public class Drone {
@@ -14,7 +13,7 @@ public class Drone {
         int tempe = tempc + tempd;
         double result = Math.sqrt(tempe);
         
-        return (int) Math.round(result);
+        return (int) Math.abs(Math.round(result));
     }
     
 }
