@@ -6,25 +6,37 @@ import java.util.Comparator;
 
 public class Order implements Comparator<Order> {
     
-    int[] delCord;
-    ArrayList<OrderItem> items;
+    int[] Drow;
+    int[] dcol;
+    ArrayList<Integer> items;
     ArrayList<Warehouse> availWarehouse;
     int[] droneCord;
     int[] wareHouseCord;
+
+    public Order(int[] Drow, int[] dcol, ArrayList<String> itemsa) {
+        this.Drow = Drow;
+        this.dcol = dcol;
+        for(String item: itemsa){
+            items.add(Integer.parseInt(item));
+        }
+    }
+    
+    
 
     public int[] getDelCord() {
         return delCord;
     }
 
+
     public void setDelCord(int[] delCord) {
         this.delCord = delCord;
     }
 
-    public ArrayList<OrderItem> getItems() {
+    public ArrayList<String> getItems() {
         return items;
     }
 
-    public void setItems(ArrayList<OrderItem> items) {
+    public void setItems(ArrayList<String> items) {
         this.items = items;
     }
     

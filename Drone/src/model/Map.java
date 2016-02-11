@@ -16,6 +16,7 @@ public class Map {
     
     ArrayList<Warehouse> warehouseList;
     ArrayList<Integer> productList;
+    ArrayList<String> orderList;
    
 	public int[] getMinCordinates() {
 		return minCordinates;
@@ -53,6 +54,14 @@ public class Map {
 
     public ArrayList<Integer> getProductList() {
         return productList;
+    }
+
+    public void setOrderList(ArrayList<String> ol) {
+            this.orderList = ol;
+    }
+
+    public ArrayList<String> getOrderList() {
+        return orderList;
     }
 
 
