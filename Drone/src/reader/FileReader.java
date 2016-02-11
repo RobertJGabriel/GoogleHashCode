@@ -1,12 +1,7 @@
 package reader;
 
-import com.sun.org.apache.regexp.internal.RE;
-
 import java.util.Scanner;
 
-/**
- * Created by toni on 09/02/16.
- */
 public class FileReader {
 
     public FileReader() {
@@ -35,6 +30,8 @@ public class FileReader {
             throw new IllegalFileException();
         }
 
-        return new Result(textResult, row, colum);
+
+		return new Result(textResult, row, colum);
     }
+
 }
